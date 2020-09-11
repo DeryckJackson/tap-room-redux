@@ -1,5 +1,5 @@
 import React from "react";
-import Jumbotron from 'reactstrap';
+import { Jumbotron } from 'reactstrap';
 
 function Header() {
   return (

@@ -1,13 +1,15 @@
 import React from 'react';
 import Header from './Header';
 import KegControl from './KegControl';
-import './App.css';
+import { Container } from 'reactstrap';
 
 function App() {
   return (
     <React.Fragment>
-      <Header />
-      <KegControl />
+      <Container>
+        <Header />
+        <KegControl />
+      </Container>
     </React.Fragment>
   );
 }

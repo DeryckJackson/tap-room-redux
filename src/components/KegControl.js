@@ -11,22 +11,25 @@ class KegControl extends React.Component {
           id: 0,
           name: "Bottom Shelf Brew",
           brand: "OnTap",
+          pints: 124,
           price: 3,
-          alcoholContent: "4%"
+          alcoholContent: 4
         },
         {
           id: 1,
           name: "Middle of the Line",
           brand: "OnTap",
+          pints: 124,
           price: 4,
-          alcoholContent: "5%"
+          alcoholContent: 5
         },
         {
           id: 2,
           name: "Top Shelf Brew",
           brand: "OnTap",
+          pints: 124,
           price: 5,
-          alcoholContent: "6%"
+          alcoholContent: 6
         }
       ]
     }
@@ -35,7 +38,7 @@ class KegControl extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <TicketList kegList={this.state.kegList} />
+        <KegList kegList={this.state.kegList} />
       </React.Fragment>
     )
   }
