@@ -1,5 +1,6 @@
 import React from 'react';
 import KegList from './KegList'
+import { v4 } from 'uuid';
 
 class KegControl extends React.Component {
 
@@ -8,7 +9,7 @@ class KegControl extends React.Component {
     this.state = {
       kegList: [
         {
-          id: 0,
+          id: v4(),
           name: "Bottom Shelf Brew",
           brand: "OnTap",
           pints: 124,
@@ -16,7 +17,7 @@ class KegControl extends React.Component {
           alcoholContent: 4
         },
         {
-          id: 1,
+          id: v4(),
           name: "Middle of the Line",
           brand: "OnTap",
           pints: 124,
@@ -24,7 +25,7 @@ class KegControl extends React.Component {
           alcoholContent: 5
         },
         {
-          id: 2,
+          id: v4(),
           name: "Top Shelf Brew",
           brand: "OnTap",
           pints: 124,
