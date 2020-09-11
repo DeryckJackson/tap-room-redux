@@ -1,4 +1,5 @@
 import React from 'react';
+import KegList from './KegList'
 
 class KegControl extends React.Component {
 
@@ -7,18 +8,21 @@ class KegControl extends React.Component {
     this.state = {
       kegList: [
         {
+          id: 0,
           name: "Bottom Shelf Brew",
           brand: "OnTap",
           price: 3,
           alcoholContent: "4%"
         },
         {
+          id: 1,
           name: "Middle of the Line",
           brand: "OnTap",
           price: 4,
           alcoholContent: "5%"
         },
         {
+          id: 2,
           name: "Top Shelf Brew",
           brand: "OnTap",
           price: 5,
@@ -36,3 +40,5 @@ class KegControl extends React.Component {
     )
   }
 }
+
+export default KegControl
