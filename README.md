@@ -13,7 +13,7 @@ User will be able to add, edit, delete and view details of each items which are 
 
 ## User Stories
 
-* As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brand, price and alcoholContent.
+:heavy_check_mark: As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brand, price and alcoholContent.
 * As a user, I want to submit a form to add a new keg to a list.
 * As a user, I want to be able to click on a keg to see its detail page.
 * As a user, I want to see how many pints are left in a keg. A full keg has roughly 124 pints.
