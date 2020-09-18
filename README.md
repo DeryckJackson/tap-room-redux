@@ -6,6 +6,7 @@
 
 A react app for tracking kegs.
 User will be able to add, edit, delete and view details of each items which are displayed in a list.
+App now uses redux.
 
 ## Component Diagram
 
@@ -52,6 +53,7 @@ npm run start
 
 * Html
 * CSS / Reactstrap
+* Redux
 * JavaScript
 * React
 
