@@ -18,6 +18,6 @@ export const toggleForm = () => ({
 });
 
 export const deleteKeg = id => ({
-  type: "c.DELETE_KEG",
+  type: c.DELETE_KEG,
   id
 });
