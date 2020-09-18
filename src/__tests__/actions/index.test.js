@@ -20,4 +20,10 @@ describe("keg list actions", () => {
       alcoholContent: 4
     })
   })
+
+  test('toggleFrom should create TOGGLE_FORM action', () => {
+    expect(actions.toggleForm()).toEqual({
+      type: c.TOGGLE_FORM
+    });
+  });
 })
