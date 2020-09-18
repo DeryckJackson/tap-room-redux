@@ -2,41 +2,16 @@ import React from 'react';
 import KegList from './KegList'
 import NewKegForm from './NewKegForm'
 import KegDetail from './KegDetail'
-import { v4 } from 'uuid';
+import { connect } from 'react-redux';
+import PropTypes from "prop-types";
+import * as a from './../actions';
 
 class KegControl extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      formVisibleOnPage: false,
       selectedKeg: null,
-      kegList: [
-        {
-          id: v4(),
-          name: "Bottom Shelf Brew",
-          brand: "OnTap",
-          pints: 64,
-          price: 3,
-          alcoholContent: 4
-        },
-        {
-          id: v4(),
-          name: "Middle of the Line",
-          brand: "OnTap",
-          pints: 124,
-          price: 4,
-          alcoholContent: 5
-        },
-        {
-          id: v4(),
-          name: "Top Shelf Brew",
-          brand: "OnTap",
-          pints: 32,
-          price: 5,
-          alcoholContent: 6
-        }
-      ]
     }
   }
 
@@ -105,5 +80,18 @@ class KegControl extends React.Component {
     )
   }
 }
+
+KegControl.propTypes = {
+  masterTicketList: PropTypes.object
+};
+
+const mapStateToProps = state => {
+  return {
+    kegList: state.kegList,
+    formVisibleOnPage: state.formVisibleOnPage
+  }
+}
+
+KegControl = connect(mapStateToProps)(KegControl);
 
 export default KegControl
