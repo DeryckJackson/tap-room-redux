@@ -22,32 +22,30 @@ class KegControl extends React.Component {
         selectedKeg: null
       });
     } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage,
-      }));
+      const { dispatch } = this.props;
+      const action = a.toggleForm();
+      dispatch(action);
     }
   }
 
   handleAddingNewKegToList = (newKeg) => {
-    const newKegList = this.state.kegList.concat(newKeg);
-    this.setState({
-      kegList: newKegList,
-      formVisibleOnPage: false
-    });
+    const { dispatch } = this.props;
+    const action = a.addKeg(newKeg)
+    dispatch(action);
+    const action2 = a.toggleForm();
+    dispatch(action2);
   }
 
   handleChangingSelectedKeg = (id) => {
-    const selectedKeg = this.state.kegList.filter(keg => keg.id === id)[0];
+    const selectedKeg = this.props.kegList[id];
     this.setState({selectedKeg: selectedKeg});
   }
 
   handleSellingPint = (soldKeg) => {
     if (soldKeg.pints > 0) {
-      this.setState(prevState => ({
-        kegList: prevState.kegList.map(
-          (keg, index) => (keg.id === soldKeg.id ? Object.assign({}, this.state.kegList[index], { pints: parseInt(soldKeg.pints - 1) }) : keg)
-        )
-      }));
+      const { dispatch } = this.props;
+      const action = a.addKeg(Object.assign({}, soldKeg, { pints: parseInt(soldKeg.pints - 1)}));
+      dispatch(action)
     }
   }
 
@@ -60,13 +58,13 @@ class KegControl extends React.Component {
       <KegDetail 
       keg = {this.state.selectedKeg} />
       buttonText = "Return to Keg List";
-    } else if (this.state.formVisibleOnPage) {
+    } else if (this.props.formVisibleOnPage) {
       currentlyVisibleState = <NewKegForm 
       onNewKegCreation={this.handleAddingNewKegToList} />
       buttonText = "Return to Keg List";
     } else {
       currentlyVisibleState = <KegList 
-      kegList={this.state.kegList} 
+      kegList={this.props.kegList} 
       onKegSelection={this.handleChangingSelectedKeg}
       onSellPint={this.handleSellingPint}/>
       buttonText = "Add Keg";
