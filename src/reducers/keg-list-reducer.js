@@ -6,11 +6,12 @@ export default (state = {}, action) => {
     case "ADD_KEG":
       return Object.assign({}, state, {
         [id]: {
-          // name,
-          // brand,
-          // pints,
-          // price,
-          // alcoholContent
+          id,
+          name,
+          brand,
+          pints,
+          price,
+          alcoholContent
         }
       })
     default:
