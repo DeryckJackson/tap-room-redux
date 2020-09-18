@@ -36,7 +36,7 @@ cd tap-room
 ```
 * Clone the repository from github, and navigate to its directory.
 ```
-git clone https://github.com/deryckjackson/tap-room.git
+git clone https://github.com/deryckjackson/tap-room-redux.git
 cd tap-room
 ```
 * Install required dependencies.
