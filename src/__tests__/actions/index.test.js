@@ -23,7 +23,14 @@ describe("keg list actions", () => {
 
   test('toggleFrom should create TOGGLE_FORM action', () => {
     expect(actions.toggleForm()).toEqual({
-      type: c.TOGGLE_FORM
+      type: c.FORM_TOGGLE
     });
   });
+
+  test("deleteKeg should create DELETE_KEG action", () => {
+    expect(actions.deleteKeg(1)).toEqual({
+      type: c.DELETE_KEG,
+      id: 1
+    })
+  })
 })

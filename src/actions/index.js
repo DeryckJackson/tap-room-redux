@@ -16,3 +16,8 @@ export const addKeg = (keg) => {
 export const toggleForm = () => ({
   type: c.FORM_TOGGLE
 });
+
+export const deleteKeg = id => ({
+  type: "c.DELETE_KEG",
+  id
+});
