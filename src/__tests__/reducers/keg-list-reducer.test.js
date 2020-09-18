@@ -1,4 +1,5 @@
 import kegListReducer from "../../reducers/keg-list-reducer"
+import * as c from "../../actions/ActionTypes"
 
 describe("kegListReducer", () => {
 
@@ -17,7 +18,7 @@ describe("kegListReducer", () => {
     const { id, name, brand, pints, price, alcoholContent } = kegData;
 
     action = {
-      type: "ADD_KEG",
+      type: c.ADD_KEG,
       id,
       name,
       brand,
