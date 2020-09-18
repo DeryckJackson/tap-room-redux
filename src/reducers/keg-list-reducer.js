@@ -16,7 +16,7 @@ export default (state = {}, action) => {
       })
     case c.DELETE_KEG:
       const newState = { ...state };
-      // delete newState[id];
+      delete newState[id];
       return newState;
     default:
       return state;
